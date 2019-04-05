@@ -1,6 +1,6 @@
 {
   "name": "createjs-particle-waypoint",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "Particle waypoint module for createjs.",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
@@ -12,6 +12,7 @@
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
     "@types/easeljs": "^1.0.0",
+    "@types/tweenjs": "^1.0.0",
     "babel-loader": "^8.0.4",
     "browser-sync": "^2.26.3",
     "husky": "^1.3.1",
@@ -23,6 +24,9 @@
     "typescript": "^3.3.4000",
     "webpack": "^4.26.0",
     "webpack-cli": "^3.1.2"
+  },
+  "dependencies": {
+    "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
   },
   "scripts": {
     "build": "npm run prettier:src && tsc && npm run babel && npm run doc",
@@ -42,8 +46,5 @@
     "hooks": {
       "pre-commit": "npm run prettier:src && tsc && npm run babel"
     }
-  },
-  "dependencies": {
-    "particle-waypoint": "https://github.com/MasatoMakino/particle-waypoint.git"
   }
 }

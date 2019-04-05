@@ -26,11 +26,14 @@ const onDomContentsLoaded = () => {
 
   const generator = new CanvasParticleGenerator(stage, wayPoint, shape);
   generator.particleInterval = 600;
+  generator.ease = createjs.Ease.cubicOut;
   generator.speedPerSec = 0.1;
 
   generator.generateAll();
   generator.play();
+  generator.removeAllParticles();
 
+  createjs.Ticker.timingMode = createjs.Ticker.RAF;
   createjs.Ticker.on("tick", updateStage);
 };
 

@@ -6,10 +6,11 @@ export class CanvasParticle extends Particle {
         this.parent.addChild(this.bitmap);
     }
     update(t) {
-        super.update(t);
-        const pos = this.path.getPoint(t);
+        const n = super.update(t);
+        const pos = this.path.getPoint(n);
         this.bitmap.x = pos[0];
         this.bitmap.y = pos[1];
+        return n;
     }
     dispose() {
         super.dispose();

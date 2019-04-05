@@ -6,7 +6,7 @@ export declare class CanvasParticle extends Particle {
     protected parent: Container;
     protected bitmap: DisplayObject;
     init(parent: Container, bitmap: DisplayObject): void;
-    update(t: number): void;
+    update(t: number): number;
     dispose(): void;
 }
 //# sourceMappingURL=CanvasParticle.d.ts.map
