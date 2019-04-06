@@ -14,24 +14,35 @@ const onDomContentsLoaded = () => {
   const shape = new createjs.Shape();
   shape.graphics
     .beginFill("#00F")
-    .drawCircle(0, 0, 4)
+    .drawCircle(0, 0, 1)
     .endFill();
 
-  const wayPoint = new ParticleWay([
-    [100, 100],
-    [100, 200],
-    [200, 200],
-    [200, 300]
-  ]);
+  const points = [[100, 100], [100, 200], [200, 200], [200, 300]];
+  const wayPoint = new ParticleWay(points);
 
-  const generator = new CanvasParticleGenerator(stage, wayPoint, shape);
+  const way = new createjs.Shape();
+  const g = way.graphics;
+  g.beginStroke("#F0F");
+  g.moveTo(points[0][0], points[0][1]);
+  points.forEach((p, index) => {
+    if (index === 0) {
+      g.moveTo(p[0], p[1]);
+      return;
+    }
+    g.lineTo(p[0], p[1]);
+  });
+  stage.addChild(way);
+
+  const generator = new CanvasParticleGenerator(stage, wayPoint, shape, {
+    ease: createjs.Ease.cubicOut,
+    isLoop: true
+  });
   generator.particleInterval = 600;
-  generator.ease = createjs.Ease.cubicOut;
-  generator.speedPerSec = 0.1;
+  generator.speedPerSec = 0.01;
 
-  generator.generateAll();
+  // generator.generateAll();
   generator.play();
-  generator.removeAllParticles();
+  // generator.removeAllParticles();
 
   createjs.Ticker.timingMode = createjs.Ticker.RAF;
   createjs.Ticker.on("tick", updateStage);
