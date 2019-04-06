@@ -37,12 +37,9 @@ const onDomContentsLoaded = () => {
     ease: createjs.Ease.cubicOut,
     isLoop: true
   });
-  generator.particleInterval = 600;
-  generator.speedPerSec = 0.01;
-
-  // generator.generateAll();
+  generator.setSpeed(600, 20);
+  // generator.setInterval( 0.1, 80);
   generator.play();
-  // generator.removeAllParticles();
 
   createjs.Ticker.timingMode = createjs.Ticker.RAF;
   createjs.Ticker.on("tick", updateStage);
