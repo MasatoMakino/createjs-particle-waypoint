@@ -1,9 +1,11 @@
 import { ParticleWay } from "particle-waypoint";
 import { CanvasParticleGenerator } from "../bin/index";
+import * as dat from "dat.gui";
 
 const onDomContentsLoaded = () => {
   const stage = initStage();
   const generator = initWay(stage);
+  initGUI(generator);
 };
 
 const initStage = () => {
@@ -45,12 +47,33 @@ const initWay = stage => {
   stage.addChild(way);
 
   const generator = new CanvasParticleGenerator(stage, wayPoint, shape, {
-    ease: createjs.Ease.cubicOut,
-    isLoop: true
+    ease: createjs.Ease.cubicOut
+    // isLoop: true
   });
   generator.setSpeed(600, 20);
   generator.play();
   return generator;
+};
+
+const initGUI = generator => {
+  const prop = {
+    isPlay: true,
+    clear: () => {
+      generator.removeAllParticles();
+    }
+  };
+  const gui = new dat.GUI();
+  gui.add(generator, "particleInterval", 33, 1000);
+  gui.add(generator, "speedPerSec", 0.0001, 0.5);
+  gui.add(prop, "isPlay").onChange(() => {
+    if (prop.isPlay) {
+      generator.play();
+    } else {
+      generator.stop();
+    }
+  });
+  gui.add(generator, "isLoop");
+  gui.add(prop, "clear");
 };
 
 /**

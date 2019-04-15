@@ -1,6 +1,6 @@
 {
   "name": "createjs-particle-waypoint",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Particle waypoint module for createjs.",
   "main": "./bin/index.js",
   "types": "./bin/index.d.ts",
