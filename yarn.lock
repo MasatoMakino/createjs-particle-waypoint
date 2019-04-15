@@ -3869,7 +3869,7 @@ parseurl@~1.3.2:
 
 "particle-waypoint@https://github.com/MasatoMakino/particle-waypoint.git":
   version "0.2.3"
-  resolved "https://github.com/MasatoMakino/particle-waypoint.git#c08c5cf2eb89bc5fc0da3023aeb0f541680ff85e"
+  resolved "https://github.com/MasatoMakino/particle-waypoint.git#8b7e91197280adf73b33df01c02a503bdef1e522"
 
 pascalcase@^0.1.1:
   version "0.1.1"
