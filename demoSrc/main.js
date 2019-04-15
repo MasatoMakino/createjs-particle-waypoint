@@ -2,6 +2,11 @@ import { ParticleWay } from "particle-waypoint";
 import { CanvasParticleGenerator } from "../bin/index";
 
 const onDomContentsLoaded = () => {
+  const stage = initStage();
+  const generator = initWay(stage);
+};
+
+const initStage = () => {
   //ステージ更新処理
   const updateStage = () => {
     stage.update();
@@ -11,6 +16,12 @@ const onDomContentsLoaded = () => {
   const stage = new createjs.Stage(canvas);
   stage.enableMouseOver();
 
+  createjs.Ticker.timingMode = createjs.Ticker.RAF;
+  createjs.Ticker.on("tick", updateStage);
+  return stage;
+};
+
+const initWay = stage => {
   const shape = new createjs.Shape();
   shape.graphics
     .beginFill("#00F")
@@ -38,11 +49,8 @@ const onDomContentsLoaded = () => {
     isLoop: true
   });
   generator.setSpeed(600, 20);
-  // generator.setInterval( 0.1, 80);
   generator.play();
-
-  createjs.Ticker.timingMode = createjs.Ticker.RAF;
-  createjs.Ticker.on("tick", updateStage);
+  return generator;
 };
 
 /**
