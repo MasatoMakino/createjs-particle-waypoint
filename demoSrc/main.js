@@ -48,7 +48,6 @@ const initWay = stage => {
 
   const generator = new CanvasParticleGenerator(stage, wayPoint, shape, {
     ease: createjs.Ease.cubicOut
-    // isLoop: true
   });
   generator.setSpeed(600, 20);
   generator.play();
@@ -58,6 +57,8 @@ const initWay = stage => {
 const initGUI = generator => {
   const prop = {
     isPlay: true,
+    ease: "cubicOut",
+    valve: true,
     clear: () => {
       generator.removeAllParticles();
     }
@@ -65,6 +66,18 @@ const initGUI = generator => {
   const gui = new dat.GUI();
   gui.add(generator, "particleInterval", 33, 1000);
   gui.add(generator, "speedPerSec", 0.0001, 0.5);
+  gui.add(prop, "ease", ["cubicOut", "cubicInOut", "liner"]).onChange(() => {
+    let ease = null;
+    switch (prop.ease) {
+      case "cubicOut":
+        ease = createjs.Ease.cubicOut;
+        break;
+      case "cubicInOut":
+        ease = createjs.Ease.cubicInOut;
+        break;
+    }
+    generator.updateEase(ease, generator.isLoop);
+  });
   gui.add(prop, "isPlay").onChange(() => {
     if (prop.isPlay) {
       generator.play();
@@ -73,6 +86,13 @@ const initGUI = generator => {
     }
   });
   gui.add(generator, "isLoop");
+  gui.add(prop, "valve").onChange(() => {
+    if (prop.valve) {
+      generator.openValve();
+    } else {
+      generator.closeValve();
+    }
+  });
   gui.add(prop, "clear");
 };
 
