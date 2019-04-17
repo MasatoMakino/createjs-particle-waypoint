@@ -11,22 +11,34 @@ import {
 
 export class CanvasParticleGenerator extends ParticleGenerator {
   protected parent: Container;
-  protected map: DisplayObject;
+  protected map: DisplayObject[];
+  private mapCounter: number = 0;
 
   constructor(
     parent: Container,
     path: ParticleWay,
-    map: DisplayObject,
+    map: DisplayObject | DisplayObject[],
     option?: ParticleGeneratorOption
   ) {
     super(path, option);
     this.parent = parent;
-    this.map = map;
+
+    if (Array.isArray(map)) {
+      this.map = map;
+    } else {
+      this.map = [map];
+    }
   }
 
   protected generateParticle(path: ParticleWay): Particle {
     const particle = new CanvasParticle(this.path);
-    particle.init(this.parent, this.map);
+    particle.init(this.parent, this.map[this.mapCounter]);
+    this.mapCounter = (this.mapCounter += 1) % this.map.length;
     return particle;
+  }
+
+  public generateAll(): void {
+    this.mapCounter = 0;
+    super.generateAll();
   }
 }

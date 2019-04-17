@@ -24,11 +24,20 @@ const initStage = () => {
 };
 
 const initWay = stage => {
-  const shape = new createjs.Shape();
-  shape.graphics
-    .beginFill("#00F")
-    .drawCircle(0, 0, 1)
-    .endFill();
+  const getShape = r => {
+    const shape = new createjs.Shape();
+    shape.graphics
+      .beginFill("#00F")
+      .drawCircle(0, 0, r)
+      .endFill();
+    return shape;
+  };
+
+  const shapes = [];
+  const n = 12;
+  for (let i = 0; i < n; i++) {
+    shapes.push(getShape(i * 0.125 + 1));
+  }
 
   const points = [[100, 100], [100, 200], [200, 200], [200, 300]];
   const wayPoint = new ParticleWay(points);
@@ -46,10 +55,10 @@ const initWay = stage => {
   });
   stage.addChild(way);
 
-  const generator = new CanvasParticleGenerator(stage, wayPoint, shape, {
+  const generator = new CanvasParticleGenerator(stage, wayPoint, shapes, {
     ease: createjs.Ease.cubicOut
   });
-  generator.setSpeed(600, 20);
+  generator.setSpeed(333, n * 2);
   generator.play();
   return generator;
 };
