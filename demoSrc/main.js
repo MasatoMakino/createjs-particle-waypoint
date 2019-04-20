@@ -1,4 +1,4 @@
-import { ParticleWay } from "particle-waypoint";
+import { BezierUtil, ParticleWay } from "particle-waypoint";
 import { CanvasParticleGenerator } from "../bin/index";
 import * as dat from "dat.gui";
 
@@ -110,9 +110,9 @@ const initWay = stage => {
   }
 
   const points = getPath();
-  const shape_ewgc = new createjs.Shape();
-  shape_ewgc.graphics.ss(1).beginStroke("rgba(255,0,0,0.25)");
-  const g = shape_ewgc.graphics;
+  const passage = new createjs.Shape();
+  passage.graphics.ss(1).beginStroke("rgba(255,0,0,0.25)");
+  const g = passage.graphics;
   for (let i = 0; i < points.length; i++) {
     if (i === 0) {
       g.mt(...points[i]);
@@ -121,9 +121,9 @@ const initWay = stage => {
     g.bt(...points[i]);
   }
   g.ef();
-  stage.addChild(shape_ewgc);
+  stage.addChild(passage);
 
-  const wayPoint = new ParticleWay(points);
+  const wayPoint = new ParticleWay(BezierUtil.differentiate(points));
 
   const generator = new CanvasParticleGenerator(stage, wayPoint, shapes, {
     ease: createjs.Ease.cubicOut
