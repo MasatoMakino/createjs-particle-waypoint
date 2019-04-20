@@ -12,12 +12,12 @@ const onDomContentsLoaded = () => {
 };
 
 const initStage = () => {
-  //ステージ更新処理
   const updateStage = () => {
     stage.update();
   };
 
   const canvas = document.getElementById("appCanvas");
+  canvas.style.backgroundColor = "#000";
   const stage = new createjs.Stage(canvas);
   stage.enableMouseOver();
 
@@ -41,7 +41,7 @@ const initPassage = (way, stage) => {
 
 const writePassage = (passage, way) => {
   passage.graphics.clear();
-  passage.graphics.ss(1).beginStroke("rgba(255,0,0,0.25)");
+  passage.graphics.ss(1).beginStroke("hsl(0, 100%, 10%)");
   const g = passage.graphics;
   for (let i = 0; i < way.points.length; i++) {
     if (i === 0) {
@@ -54,25 +54,26 @@ const writePassage = (passage, way) => {
 };
 
 const initGenerator = (way, stage) => {
-  const getShape = r => {
+  const n = 12;
+  const getShape = i => {
+    const angle = (i * 360) / n;
     const shape = new createjs.Shape();
+    shape.compositeOperation = "lighter";
     shape.graphics
-      .beginFill("#00F")
-      .drawCircle(0, 0, r)
+      .beginFill(`hsl(${angle}, 100%, 75%)`)
+      .drawCircle(0, 0, 4)
       .endFill();
     return shape;
   };
-
   const shapes = [];
-  const n = 12;
   for (let i = 0; i < n; i++) {
-    shapes.push(getShape(i * 0.125 + 1));
+    shapes.push(getShape(i));
   }
 
   const generator = new CanvasParticleGenerator(stage, way, shapes, {
-    ease: createjs.Ease.cubicOut
+    ease: createjs.Ease.cubicInOut
   });
-  generator.setSpeed(166, n * 8);
+  generator.setSpeed(166, n * 6);
   generator.play();
   return generator;
 };
@@ -81,7 +82,7 @@ const initGUI = (generator, passage) => {
   const prop = {
     isPlay: true,
     path: "heart",
-    ease: "cubicOut",
+    ease: "cubicInOut",
     valve: true,
     clear: () => {
       generator.removeAllParticles();
