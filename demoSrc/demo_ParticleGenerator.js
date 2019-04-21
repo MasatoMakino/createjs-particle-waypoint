@@ -1,6 +1,7 @@
 import { BezierUtil, ParticleWay } from "particle-waypoint";
 import { CanvasParticleGenerator } from "../bin/index";
 import { getHeartPath, getCircle, getTriangle } from "./SamplePath";
+import { initStage, initWay } from "./common";
 import * as dat from "dat.gui";
 
 /**
@@ -9,72 +10,9 @@ import * as dat from "dat.gui";
  */
 const onDomContentsLoaded = () => {
   const stage = initStage();
-  const way = initWay();
-  const passage = initPassage(way, stage);
+  const way = initWay(stage);
   const generator = initGenerator(way, stage);
-  initGUI(generator, passage);
-};
-
-/**
- * createjsのステージを初期化する。
- * @return {createjs.Stage}
- */
-const initStage = () => {
-  const updateStage = () => {
-    stage.update();
-  };
-
-  const canvas = document.getElementById("appCanvas");
-  canvas.style.backgroundColor = "#000";
-  const stage = new createjs.Stage(canvas);
-  stage.enableMouseOver();
-
-  createjs.Ticker.timingMode = createjs.Ticker.RAF;
-  createjs.Ticker.on("tick", updateStage);
-  return stage;
-};
-
-/**
- * ParticleWayを初期化する。
- * @return {ParticleWay}
- */
-const initWay = () => {
-  const points = getHeartPath();
-  const wayPoint = new ParticleWay(BezierUtil.differentiate(points));
-  return wayPoint;
-};
-
-/**
- * ParticleWayのパスを可視化する。デモ用。
- * @param way
- * @param stage
- * @return {createjs.Shape}
- */
-const initPassage = (way, stage) => {
-  const passage = new createjs.Shape();
-  writePassage(passage, way);
-  stage.addChild(passage);
-  return passage;
-};
-
-/**
- * ParticleWayのパスを再描画する。デモ用。
- * @param way
- * @param stage
- * @return {createjs.Shape}
- */
-const writePassage = (passage, way) => {
-  passage.graphics.clear();
-  passage.graphics.ss(1).beginStroke("hsl(0, 100%, 10%)");
-  const g = passage.graphics;
-  for (let i = 0; i < way.points.length; i++) {
-    if (i === 0) {
-      g.mt(...way.points[i]);
-      continue;
-    }
-    g.lineTo(...way.points[i]);
-  }
-  g.ef();
+  initGUI(generator);
 };
 
 /**
@@ -112,14 +50,14 @@ const initGenerator = (way, stage) => {
 /**
  * デモのパラメーターを操作するGUIを初期化する。
  * @param generator
- * @param passage
  */
-const initGUI = (generator, passage) => {
+const initGUI = generator => {
   const prop = {
     isPlay: true,
     path: "heart",
     ease: "cubicInOut",
     valve: true,
+    visiblePassage: true,
     clear: () => {
       generator.removeAllParticles();
     }
@@ -153,7 +91,6 @@ const initGUI = (generator, passage) => {
         break;
     }
     generator.path.points = path;
-    writePassage(passage, generator.path);
   });
   gui.add(prop, "isPlay").onChange(() => {
     if (prop.isPlay) {
@@ -168,6 +105,13 @@ const initGUI = (generator, passage) => {
       generator.openValve();
     } else {
       generator.closeValve();
+    }
+  });
+  gui.add(prop, "visiblePassage").onChange(() => {
+    if (prop.visiblePassage) {
+      generator.path.showPassage();
+    } else {
+      generator.path.hidePassage();
     }
   });
   gui.add(prop, "clear");
