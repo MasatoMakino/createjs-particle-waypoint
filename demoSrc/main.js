@@ -3,6 +3,10 @@ import { CanvasParticleGenerator } from "../bin/index";
 import { getHeartPath, getCircle, getTriangle } from "./SamplePath";
 import * as dat from "dat.gui";
 
+/**
+ * DOMContentLoaded後の初期化処理。
+ * デモに必要なパーツを一式初期化する。
+ */
 const onDomContentsLoaded = () => {
   const stage = initStage();
   const way = initWay();
@@ -11,6 +15,10 @@ const onDomContentsLoaded = () => {
   initGUI(generator, passage);
 };
 
+/**
+ * createjsのステージを初期化する。
+ * @return {createjs.Stage}
+ */
 const initStage = () => {
   const updateStage = () => {
     stage.update();
@@ -26,12 +34,22 @@ const initStage = () => {
   return stage;
 };
 
+/**
+ * ParticleWayを初期化する。
+ * @return {ParticleWay}
+ */
 const initWay = () => {
   const points = getHeartPath();
   const wayPoint = new ParticleWay(BezierUtil.differentiate(points));
   return wayPoint;
 };
 
+/**
+ * ParticleWayのパスを可視化する。デモ用。
+ * @param way
+ * @param stage
+ * @return {createjs.Shape}
+ */
 const initPassage = (way, stage) => {
   const passage = new createjs.Shape();
   writePassage(passage, way);
@@ -39,6 +57,12 @@ const initPassage = (way, stage) => {
   return passage;
 };
 
+/**
+ * ParticleWayのパスを再描画する。デモ用。
+ * @param way
+ * @param stage
+ * @return {createjs.Shape}
+ */
 const writePassage = (passage, way) => {
   passage.graphics.clear();
   passage.graphics.ss(1).beginStroke("hsl(0, 100%, 10%)");
@@ -53,11 +77,18 @@ const writePassage = (passage, way) => {
   g.ef();
 };
 
+/**
+ * パーティクル生成機を初期化する。
+ * @param way
+ * @param stage
+ * @return {CanvasParticleGenerator}
+ */
 const initGenerator = (way, stage) => {
   const n = 12;
   const getShape = i => {
     const angle = (i * 360) / n;
     const shape = new createjs.Shape();
+    shape.shadow = new createjs.Shadow(`hsl(${angle}, 100%, 75%)`, 0, 0, 4);
     shape.compositeOperation = "lighter";
     shape.graphics
       .beginFill(`hsl(${angle}, 100%, 75%)`)
@@ -78,6 +109,11 @@ const initGenerator = (way, stage) => {
   return generator;
 };
 
+/**
+ * デモのパラメーターを操作するGUIを初期化する。
+ * @param generator
+ * @param passage
+ */
 const initGUI = (generator, passage) => {
   const prop = {
     isPlay: true,
