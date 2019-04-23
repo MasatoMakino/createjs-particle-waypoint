@@ -81,10 +81,10 @@ const initGUI = generator => {
     let path;
     switch (prop.path) {
       case "heart":
-        path = BezierUtil.differentiate(getHeartPath());
+        path = BezierUtil.subdivide(getHeartPath());
         break;
       case "circle":
-        path = BezierUtil.differentiate(getCircle());
+        path = BezierUtil.subdivide(getCircle());
         break;
       case "triangle":
         path = getTriangle();

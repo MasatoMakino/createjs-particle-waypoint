@@ -27,7 +27,7 @@ exports.initStage = () => {
  */
 exports.initWay = stage => {
   const points = getHeartPath();
-  const wayPoint = new CanvasParticleWay(BezierUtil.differentiate(points), {
+  const wayPoint = new CanvasParticleWay(BezierUtil.subdivide(points), {
     parent: stage
   });
   wayPoint.showPassage();
