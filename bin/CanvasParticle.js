@@ -4,6 +4,7 @@ export class CanvasParticle extends Particle {
         this.parent = parent;
         this.bitmap = bitmap.clone();
         this.parent.addChild(this.bitmap);
+        this.bitmap.mouseEnabled = false;
     }
     update(t) {
         const n = super.update(t);
