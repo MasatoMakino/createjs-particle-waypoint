@@ -11,7 +11,7 @@ import {
 
 export class CanvasParticleGenerator extends ParticleGenerator {
   protected parent: Container;
-  protected map: DisplayObject[]; //パーティクルに使用するビットマップの配列
+  protected map: DisplayObject[]; //パーティクルに使用するテクスチャ配列。ビットマップもしくは描画済みのShapeを利用する。
   private mapCounter: number = 0;
 
   constructor(
