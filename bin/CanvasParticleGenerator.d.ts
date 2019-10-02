@@ -6,8 +6,16 @@ export declare class CanvasParticleGenerator extends ParticleGenerator {
     protected parent: Container;
     protected map: DisplayObject[];
     private mapCounter;
-    constructor(parent: Container, path: ParticleWay, map: DisplayObject | DisplayObject[], option?: ParticleGeneratorOption);
+    private _rangeR;
+    private _rangeRotationSpeed;
+    constructor(parent: Container, path: ParticleWay, map: DisplayObject | DisplayObject[], option?: CanvasParticleGeneratorOption);
     protected generateParticle(path: ParticleWay): Particle;
     generateAll(): void;
+    rangeRotationSpeed: number;
+    rangeR: number;
+}
+export interface CanvasParticleGeneratorOption extends ParticleGeneratorOption {
+    rangeR?: number;
+    rangeRotationSpeed?: number;
 }
 //# sourceMappingURL=CanvasParticleGenerator.d.ts.map

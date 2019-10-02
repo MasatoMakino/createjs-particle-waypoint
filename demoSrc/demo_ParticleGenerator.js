@@ -65,6 +65,10 @@ const initGUI = generator => {
   const gui = new dat.GUI();
   gui.add(generator, "particleInterval", 33, 1000);
   gui.add(generator, "speedPerSec", 0.0001, 0.5);
+
+  gui.add(generator, "rangeR", 0.0, 32.0, 0.1);
+  gui.add(generator, "rangeRotationSpeed", 0.0, 3.14 * 4, 0.01);
+
   gui.add(prop, "ease", ["cubicOut", "cubicInOut", "liner"]).onChange(() => {
     let ease = null;
     switch (prop.ease) {

@@ -95,6 +95,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#_ranger" class="tsd-kind-icon">_rangeR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#_rangerotationspeed" class="tsd-kind-icon">_range<wbr>Rotation<wbr>Speed</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#ease" class="tsd-kind-icon">ease</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#isloop" class="tsd-kind-icon">is<wbr>Loop</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#map" class="tsd-kind-icon">map</a></li>
@@ -102,8 +104,16 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#parent" class="tsd-kind-icon">parent</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#particleinterval" class="tsd-kind-icon">particle<wbr>Interval</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#path" class="tsd-kind-icon">path</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#probability" class="tsd-kind-icon">probability</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#speedpersec" class="tsd-kind-icon">speed<wbr>Per<wbr>Sec</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#visible" class="tsd-kind-icon">visible</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#ranger" class="tsd-kind-icon">rangeR</a></li>
+								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_canvasparticlegenerator_.canvasparticlegenerator.html#rangerotationspeed" class="tsd-kind-icon">range<wbr>Rotation<wbr>Speed</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -132,14 +142,14 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Canvas<wbr>Particle<wbr>Generator<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Container</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParticleWay</span>, map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DisplayObject</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DisplayObject</span><span class="tsd-signature-symbol">[]</span>, option<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ParticleGeneratorOption</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_canvasparticlegenerator_.canvasparticlegenerator.html" class="tsd-signature-type">CanvasParticleGenerator</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Canvas<wbr>Particle<wbr>Generator<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Container</span>, path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ParticleWay</span>, map<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DisplayObject</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DisplayObject</span><span class="tsd-signature-symbol">[]</span>, option<span class="tsd-signature-symbol">?: </span><a href="../interfaces/_canvasparticlegenerator_.canvasparticlegeneratoroption.html" class="tsd-signature-type">CanvasParticleGeneratorOption</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_canvasparticlegenerator_.canvasparticlegenerator.html" class="tsd-signature-type">CanvasParticleGenerator</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides ParticleGenerator.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/e6a3d7f/src/CanvasParticleGenerator.ts#L15">CanvasParticleGenerator.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L18">CanvasParticleGenerator.ts:18</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -154,7 +164,7 @@
 									<h5>map: <span class="tsd-signature-type">DisplayObject</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">DisplayObject</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <span class="tsd-signature-type">ParticleGeneratorOption</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> option: <a href="../interfaces/_canvasparticlegenerator_.canvasparticlegeneratoroption.html" class="tsd-signature-type">CanvasParticleGeneratorOption</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_canvasparticlegenerator_.canvasparticlegenerator.html" class="tsd-signature-type">CanvasParticleGenerator</a></h4>
@@ -164,6 +174,26 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_ranger" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _rangeR</h3>
+					<div class="tsd-signature tsd-kind-icon">_rangeR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L17">CanvasParticleGenerator.ts:17</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="_rangerotationspeed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> _range<wbr>Rotation<wbr>Speed</h3>
+					<div class="tsd-signature tsd-kind-icon">_range<wbr>Rotation<wbr>Speed<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L18">CanvasParticleGenerator.ts:18</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="ease" class="tsd-anchor"></a>
 					<h3>ease</h3>
@@ -171,7 +201,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ParticleGenerator.ease</p>
 						<ul>
-							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:121</li>
+							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:122</li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -203,7 +233,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ParticleGenerator.isLoop</p>
 						<ul>
-							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:120</li>
+							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:121</li>
 						</ul>
 					</aside>
 				</section>
@@ -213,7 +243,7 @@
 					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DisplayObject</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/e6a3d7f/src/CanvasParticleGenerator.ts#L14">CanvasParticleGenerator.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L14">CanvasParticleGenerator.ts:14</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -223,7 +253,7 @@
 					<div class="tsd-signature tsd-kind-icon">map<wbr>Counter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/e6a3d7f/src/CanvasParticleGenerator.ts#L15">CanvasParticleGenerator.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L15">CanvasParticleGenerator.ts:15</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +263,7 @@
 					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Container</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/e6a3d7f/src/CanvasParticleGenerator.ts#L13">CanvasParticleGenerator.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L13">CanvasParticleGenerator.ts:13</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -244,7 +274,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ParticleGenerator.particleInterval</p>
 						<ul>
-							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:118</li>
+							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:119</li>
 						</ul>
 					</aside>
 				</section>
@@ -256,6 +286,17 @@
 						<p>Inherited from ParticleGenerator.path</p>
 						<ul>
 							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:8</li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="probability" class="tsd-anchor"></a>
+					<h3>probability</h3>
+					<div class="tsd-signature tsd-kind-icon">probability<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from ParticleGenerator.probability</p>
+						<ul>
+							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:123</li>
 						</ul>
 					</aside>
 				</section>
@@ -277,9 +318,76 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ParticleGenerator.visible</p>
 						<ul>
-							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:119</li>
+							<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:120</li>
 						</ul>
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="ranger" class="tsd-anchor"></a>
+					<h3>rangeR</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rangeR<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rangeR<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L66">CanvasParticleGenerator.ts:66</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L70">CanvasParticleGenerator.ts:70</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
+					<a name="rangerotationspeed" class="tsd-anchor"></a>
+					<h3>range<wbr>Rotation<wbr>Speed</h3>
+					<ul class="tsd-signatures tsd-kind-accessor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> rangeRotationSpeed<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">set</span> rangeRotationSpeed<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L59">CanvasParticleGenerator.ts:59</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L63">CanvasParticleGenerator.ts:63</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -295,7 +403,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.closeValve</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:42</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:43</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -319,7 +427,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.dispose</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:117</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:118</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -342,7 +450,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides ParticleGenerator.generateAll</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/e6a3d7f/src/CanvasParticleGenerator.ts#L40">CanvasParticleGenerator.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L54">CanvasParticleGenerator.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -360,7 +468,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides ParticleGenerator.generateParticle</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/e6a3d7f/src/CanvasParticleGenerator.ts#L33">CanvasParticleGenerator.ts:33</a></li>
+									<li>Defined in <a href="https://github.com/MasatoMakino/createjs-particle-waypoint/blob/3ff7a22/src/CanvasParticleGenerator.ts#L42">CanvasParticleGenerator.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -384,7 +492,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.openValve</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:37</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:38</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -407,7 +515,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.play</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:29</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:30</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -430,7 +538,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.removeAllParticles</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:99</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:100</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -453,7 +561,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.removeParticle</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:95</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:96</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -484,7 +592,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.setInterval</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:113</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:114</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -519,7 +627,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.setSpeed</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:106</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:107</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -554,7 +662,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.stop</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:33</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:34</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -577,7 +685,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ParticleGenerator.updateEase</p>
 								<ul>
-									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:127</li>
+									<li>Defined in node_modules/particle-waypoint/bin/ParticleGenerator.d.ts:129</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -654,6 +762,12 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#_ranger" class="tsd-kind-icon">_rangeR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#_rangerotationspeed" class="tsd-kind-icon">_range<wbr>Rotation<wbr>Speed</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#ease" class="tsd-kind-icon">ease</a>
 							</li>
@@ -676,10 +790,19 @@
 								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#path" class="tsd-kind-icon">path</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#probability" class="tsd-kind-icon">probability</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#speedpersec" class="tsd-kind-icon">speed<wbr>Per<wbr>Sec</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#visible" class="tsd-kind-icon">visible</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#ranger" class="tsd-kind-icon">rangeR</a>
+							</li>
+							<li class=" tsd-kind-accessor tsd-parent-kind-class">
+								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#rangerotationspeed" class="tsd-kind-icon">range<wbr>Rotation<wbr>Speed</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_canvasparticlegenerator_.canvasparticlegenerator.html#closevalve" class="tsd-kind-icon">close<wbr>Valve</a>
@@ -721,6 +844,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_canvasparticlegenerator_.canvasparticlegeneratoroption.html" class="tsd-kind-icon">Canvas<wbr>Particle<wbr>Generator<wbr>Option</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

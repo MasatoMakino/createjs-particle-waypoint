@@ -4,7 +4,15 @@ export class CanvasParticleGenerator extends ParticleGenerator {
     constructor(parent, path, map, option) {
         super(path, option);
         this.mapCounter = 0;
+        this._rangeR = 0.0;
+        this._rangeRotationSpeed = 0.0;
         this.parent = parent;
+        if (option) {
+            if (option.rangeR)
+                this._rangeR = option.rangeR;
+            if (option.rangeRotationSpeed)
+                this._rangeRotationSpeed = option.rangeRotationSpeed;
+        }
         if (Array.isArray(map)) {
             this.map = map;
         }
@@ -14,12 +22,24 @@ export class CanvasParticleGenerator extends ParticleGenerator {
     }
     generateParticle(path) {
         const particle = new CanvasParticle(this.path);
-        particle.init(this.parent, this.map[this.mapCounter]);
+        particle.init(this.parent, this.map[this.mapCounter], this._rangeR, this._rangeRotationSpeed);
         this.mapCounter = (this.mapCounter += 1) % this.map.length;
         return particle;
     }
     generateAll() {
         this.mapCounter = 0;
         super.generateAll();
+    }
+    get rangeRotationSpeed() {
+        return this._rangeRotationSpeed;
+    }
+    set rangeRotationSpeed(value) {
+        this._rangeRotationSpeed = value;
+    }
+    get rangeR() {
+        return this._rangeR;
+    }
+    set rangeR(value) {
+        this._rangeR = value;
     }
 }
