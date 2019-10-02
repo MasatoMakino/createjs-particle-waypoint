@@ -14,14 +14,23 @@ export class CanvasParticleGenerator extends ParticleGenerator {
   protected map: DisplayObject[]; //パーティクルに使用するテクスチャ配列。ビットマップもしくは描画済みのShapeを利用する。
   private mapCounter: number = 0;
 
+  private _rangeR: number = 0.0;
+  private _rangeRotationSpeed: number = 0.0;
+
   constructor(
     parent: Container,
     path: ParticleWay,
     map: DisplayObject | DisplayObject[],
-    option?: ParticleGeneratorOption
+    option?: CanvasParticleGeneratorOption
   ) {
     super(path, option);
     this.parent = parent;
+
+    if (option) {
+      if (option.rangeR) this._rangeR = option.rangeR;
+      if (option.rangeRotationSpeed)
+        this._rangeRotationSpeed = option.rangeRotationSpeed;
+    }
 
     if (Array.isArray(map)) {
       this.map = map;
@@ -32,7 +41,12 @@ export class CanvasParticleGenerator extends ParticleGenerator {
 
   protected generateParticle(path: ParticleWay): Particle {
     const particle = new CanvasParticle(this.path);
-    particle.init(this.parent, this.map[this.mapCounter]);
+    particle.init(
+      this.parent,
+      this.map[this.mapCounter],
+      this._rangeR,
+      this._rangeRotationSpeed
+    );
     this.mapCounter = (this.mapCounter += 1) % this.map.length;
     return particle;
   }
@@ -41,4 +55,24 @@ export class CanvasParticleGenerator extends ParticleGenerator {
     this.mapCounter = 0;
     super.generateAll();
   }
+
+  get rangeRotationSpeed(): number {
+    return this._rangeRotationSpeed;
+  }
+
+  set rangeRotationSpeed(value: number) {
+    this._rangeRotationSpeed = value;
+  }
+  get rangeR(): number {
+    return this._rangeR;
+  }
+
+  set rangeR(value: number) {
+    this._rangeR = value;
+  }
+}
+
+export interface CanvasParticleGeneratorOption extends ParticleGeneratorOption {
+  rangeR?: number;
+  rangeRotationSpeed?: number;
 }
