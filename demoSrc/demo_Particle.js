@@ -1,6 +1,6 @@
-import { BezierUtil, ParticleWay } from "particle-waypoint";
-import { CanvasParticle, CanvasParticleGenerator } from "../bin/index";
-import { getHeartPath, getCircle, getTriangle } from "./SamplePath";
+import { BezierUtil } from "particle-waypoint";
+import { CanvasParticle } from "../bin/index";
+import { getCircle, getHeartPath, getTriangle } from "./SamplePath";
 import { initStage, initWay } from "./common";
 import * as dat from "dat.gui";
 

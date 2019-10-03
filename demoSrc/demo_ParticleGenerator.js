@@ -1,6 +1,6 @@
-import { BezierUtil, ParticleWay } from "particle-waypoint";
+import { BezierUtil } from "particle-waypoint";
 import { CanvasParticleGenerator } from "../bin/index";
-import { getHeartPath, getCircle, getTriangle } from "./SamplePath";
+import { getCircle, getHeartPath, getTriangle } from "./SamplePath";
 import { initStage, initWay } from "./common";
 import * as dat from "dat.gui";
 
@@ -94,7 +94,7 @@ const initGUI = generator => {
         path = getTriangle();
         break;
     }
-    generator.path.points = path;
+    generator.path[0].points = path;
   });
   gui.add(prop, "isPlay").onChange(() => {
     if (prop.isPlay) {

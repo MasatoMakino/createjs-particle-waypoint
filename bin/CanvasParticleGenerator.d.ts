@@ -8,7 +8,7 @@ export declare class CanvasParticleGenerator extends ParticleGenerator {
     private mapCounter;
     private _rangeR;
     private _rangeRotationSpeed;
-    constructor(parent: Container, path: ParticleWay, map: DisplayObject | DisplayObject[], option?: CanvasParticleGeneratorOption);
+    constructor(parent: Container, path: ParticleWay | ParticleWay[], map: DisplayObject | DisplayObject[], option?: CanvasParticleGeneratorOption);
     protected generateParticle(path: ParticleWay): Particle;
     generateAll(): void;
     rangeRotationSpeed: number;

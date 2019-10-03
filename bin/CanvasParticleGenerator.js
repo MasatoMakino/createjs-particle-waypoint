@@ -21,7 +21,7 @@ export class CanvasParticleGenerator extends ParticleGenerator {
         }
     }
     generateParticle(path) {
-        const particle = new CanvasParticle(this.path);
+        const particle = new CanvasParticle(path);
         particle.init(this.parent, this.map[this.mapCounter], this._rangeR, this._rangeRotationSpeed);
         this.mapCounter = (this.mapCounter += 1) % this.map.length;
         return particle;

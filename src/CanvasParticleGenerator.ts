@@ -19,7 +19,7 @@ export class CanvasParticleGenerator extends ParticleGenerator {
 
   constructor(
     parent: Container,
-    path: ParticleWay,
+    path: ParticleWay | ParticleWay[],
     map: DisplayObject | DisplayObject[],
     option?: CanvasParticleGeneratorOption
   ) {
@@ -40,7 +40,7 @@ export class CanvasParticleGenerator extends ParticleGenerator {
   }
 
   protected generateParticle(path: ParticleWay): Particle {
-    const particle = new CanvasParticle(this.path);
+    const particle = new CanvasParticle(path);
     particle.init(
       this.parent,
       this.map[this.mapCounter],
