@@ -3,12 +3,16 @@ import { CanvasParticleGenerator } from "../bin/index";
 import { getCircle, getHeartPath, getTriangle } from "./SamplePath";
 import { initStage, initWay } from "./common";
 import * as dat from "dat.gui";
+import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
 /**
  * DOMContentLoaded後の初期化処理。
  * デモに必要なパーツを一式初期化する。
  */
 const onDomContentsLoaded = () => {
+  // RAFTicker.addEventListener(RAFTickerEventType.tick, (e)=>{
+  //   console.log(e.delta);
+  // })
   const stage = initStage();
   const way = initWay(stage);
   const generator = initGenerator(way, stage);
