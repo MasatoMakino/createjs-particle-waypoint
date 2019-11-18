@@ -10,11 +10,8 @@ import { RAFTicker, RAFTickerEventType } from "raf-ticker";
  * デモに必要なパーツを一式初期化する。
  */
 const onDomContentsLoaded = () => {
-  // RAFTicker.addEventListener(RAFTickerEventType.tick, (e)=>{
-  //   console.log(e.delta);
-  // })
   const stage = initStage();
-  stage.snapToPixelEnabled = true;
+  stage.snapToPixelEnabled =true;
   const way = initWay(stage);
   const generator = initGenerator(way, stage);
   initGUI(generator);
@@ -27,27 +24,12 @@ const onDomContentsLoaded = () => {
  * @return {CanvasParticleGenerator}
  */
 const initGenerator = (way, stage) => {
-  const n = 12;
-  const getShape = i => {
-    const angle = (i * 360) / n;
-    const shape = new createjs.Shape();
-    shape.shadow = new createjs.Shadow(`hsl(${angle}, 100%, 75%)`, 0, 0, 4);
-    shape.compositeOperation = "lighter";
-    shape.graphics
-      .beginFill(`hsl(${angle}, 100%, 75%)`)
-      .drawCircle(0, 0, 4)
-      .endFill();
-    return shape;
-  };
-  const shapes = [];
-  for (let i = 0; i < n; i++) {
-    shapes.push(getShape(i));
-  }
 
-  const generator = new CanvasParticleGenerator(stage, way, shapes, {
+  const bitmap = new createjs.Bitmap("./circle.png");
+  const generator = new CanvasParticleGenerator(stage, way, bitmap, {
     ease: createjs.Ease.cubicInOut
   });
-  generator.setSpeed(166, n * 6);
+  generator.setSpeed(166, 1 * 6);
   generator.play();
   return generator;
 };
@@ -69,7 +51,7 @@ const initGUI = generator => {
   };
   const gui = new dat.GUI();
   gui.add(generator, "particleInterval", 33, 1000);
-  gui.add(generator, "speedPerSec", 0.01, 0.5).step(0.01);
+  gui.add(generator, "speedPerSec", 0.0001, 0.5);
 
   gui.add(generator, "rangeR", 0.0, 32.0, 0.1);
   gui.add(generator, "rangeRotationSpeed", 0.0, 3.14 * 4, 0.01);
