@@ -11,7 +11,7 @@ import { RAFTicker, RAFTickerEventType } from "raf-ticker";
  */
 const onDomContentsLoaded = () => {
   const stage = initStage();
-  stage.snapToPixelEnabled =true;
+  stage.snapToPixelEnabled = true;
   const way = initWay(stage);
   const generator = initGenerator(way, stage);
   initGUI(generator);
@@ -24,7 +24,6 @@ const onDomContentsLoaded = () => {
  * @return {CanvasParticleGenerator}
  */
 const initGenerator = (way, stage) => {
-
   const bitmap = new createjs.Bitmap("./circle.png");
   const generator = new CanvasParticleGenerator(stage, way, bitmap, {
     ease: createjs.Ease.cubicInOut
