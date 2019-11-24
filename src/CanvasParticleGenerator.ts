@@ -33,6 +33,13 @@ export class CanvasParticleGenerator extends ParticleGenerator {
     }
 
     if (Array.isArray(map)) {
+      if (map.length === 0) {
+        console.warn(
+            "CanvasParticleGenerator : オプションとして渡されたDisplayObject配列が空です。このクラスは動作しますが、一切の表示を行いません。"
+        );
+        console.trace();
+      }
+
       this.map = map;
     } else {
       this.map = [map];
