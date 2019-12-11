@@ -1,7 +1,7 @@
 import { BezierUtil } from "particle-waypoint";
 import { CanvasParticle } from "../bin/index";
 import { getCircle, getHeartPath, getTriangle } from "./SamplePath";
-import { initStage, initWay } from "./common";
+import { initStage, initWay, initBodyStyle } from "./common";
 import * as dat from "dat.gui";
 
 /**
@@ -9,6 +9,7 @@ import * as dat from "dat.gui";
  * デモに必要なパーツを一式初期化する。
  */
 const onDomContentsLoaded = () => {
+  initBodyStyle();
   const stage = initStage();
   const way = initWay(stage);
   const particle = initParticle(way, stage);

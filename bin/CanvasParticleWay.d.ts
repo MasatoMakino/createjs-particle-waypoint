@@ -10,7 +10,7 @@ export declare class CanvasParticleWay extends ParticleWay {
     });
     private initPassage;
     private drawPassage;
-    points: number[][];
+    set points(points: number[][]);
     showPassage(): void;
     hidePassage(): void;
 }

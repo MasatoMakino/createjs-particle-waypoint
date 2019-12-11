@@ -1,7 +1,7 @@
 import { BezierUtil } from "particle-waypoint";
 import { CanvasParticleGenerator } from "../bin/index";
 import { getCircle, getHeartPath, getTriangle } from "./SamplePath";
-import { initStage, initWay } from "./common";
+import { initBodyStyle, initStage, initWay } from "./common";
 import * as dat from "dat.gui";
 import { RAFTicker, RAFTickerEventType } from "raf-ticker";
 
@@ -10,6 +10,7 @@ import { RAFTicker, RAFTickerEventType } from "raf-ticker";
  * デモに必要なパーツを一式初期化する。
  */
 const onDomContentsLoaded = () => {
+  initBodyStyle();
   // RAFTicker.addEventListener(RAFTickerEventType.tick, (e)=>{
   //   console.log(e.delta);
   // })

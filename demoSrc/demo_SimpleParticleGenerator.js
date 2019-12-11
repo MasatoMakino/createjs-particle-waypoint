@@ -1,18 +1,25 @@
 import { CanvasParticleGenerator, CanvasParticleWay } from "../bin/index";
+import { initBodyStyle } from "./common";
 
 /**
  * DOMContentLoaded後の初期化処理。
  * デモに必要なパーツを一式初期化する。
  */
 const onDomContentsLoaded = () => {
-  const points = [[100, 100], [100, 200], [200, 200], [200, 300]];
+  initBodyStyle();
+  const points = [
+    [100, 100],
+    [100, 200],
+    [200, 200],
+    [200, 300]
+  ];
   const wayPoint = new CanvasParticleWay(points);
 
   const updateStage = () => {
     stage.update();
   };
 
-  const canvas = document.getElementById("canvas");
+  const canvas = document.getElementById("appCanvas");
   const stage = new createjs.Stage(canvas);
 
   createjs.Ticker.timingMode = createjs.Ticker.RAF;

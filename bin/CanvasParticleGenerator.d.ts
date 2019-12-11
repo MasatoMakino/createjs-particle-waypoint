@@ -11,8 +11,10 @@ export declare class CanvasParticleGenerator extends ParticleGenerator {
     constructor(parent: Container, path: ParticleWay | ParticleWay[], map: DisplayObject | DisplayObject[], option?: CanvasParticleGeneratorOption);
     protected generateParticle(path: ParticleWay): Particle;
     generateAll(): void;
-    rangeRotationSpeed: number;
-    rangeR: number;
+    get rangeRotationSpeed(): number;
+    set rangeRotationSpeed(value: number);
+    get rangeR(): number;
+    set rangeR(value: number);
 }
 export interface CanvasParticleGeneratorOption extends ParticleGeneratorOption {
     rangeR?: number;
