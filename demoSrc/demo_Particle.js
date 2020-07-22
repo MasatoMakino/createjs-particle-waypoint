@@ -1,7 +1,7 @@
 import { BezierUtil } from "particle-waypoint";
-import { CanvasParticle } from "../bin/index";
+import { CanvasParticle } from "../";
 import { getCircle, getHeartPath, getTriangle } from "./SamplePath";
-import { initStage, initWay, initBodyStyle } from "./common";
+import { initBodyStyle, initStage, initWay } from "./common";
 import * as dat from "dat.gui";
 
 /**
@@ -22,10 +22,7 @@ const initParticle = (way, stage) => {
     const color = `hsl(0, 100%, 75%)`;
     shape.shadow = new createjs.Shadow(color, 0, 0, 4);
     shape.compositeOperation = "lighter";
-    shape.graphics
-      .beginFill(color)
-      .drawCircle(0, 0, 4)
-      .endFill();
+    shape.graphics.beginFill(color).drawCircle(0, 0, 4).endFill();
     return shape;
   };
 
@@ -40,12 +37,12 @@ const initParticle = (way, stage) => {
  * デモのパラメーターを操作するGUIを初期化する。
  * @param particle
  */
-const initGUI = particle => {
+const initGUI = (particle) => {
   const prop = {
     t: 0.0,
     path: "heart",
     ease: "liner",
-    visiblePassage: true
+    visiblePassage: true,
   };
 
   const gui = new dat.GUI();

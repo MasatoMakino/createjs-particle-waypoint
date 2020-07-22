@@ -1,5 +1,5 @@
 import { getHeartPath } from "./SamplePath";
-import { CanvasParticleWay } from "../bin/index";
+import { CanvasParticleWay } from "../";
 import { BezierUtil } from "particle-waypoint";
 
 export function initBodyStyle() {
@@ -33,7 +33,7 @@ export function initStage() {
 export function initWay(stage) {
   const points = getHeartPath();
   const wayPoint = new CanvasParticleWay(BezierUtil.subdivide(points), {
-    parent: stage
+    parent: stage,
   });
   wayPoint.showPassage();
   return wayPoint;

@@ -1,4 +1,4 @@
-import { CanvasParticleGenerator, CanvasParticleWay } from "../bin/index";
+import { CanvasParticleGenerator, CanvasParticleWay } from "../";
 import { initBodyStyle } from "./common";
 
 /**
@@ -11,7 +11,7 @@ const onDomContentsLoaded = () => {
     [100, 100],
     [100, 200],
     [200, 200],
-    [200, 300]
+    [200, 300],
   ];
   const wayPoint = new CanvasParticleWay(points);
 
@@ -26,10 +26,7 @@ const onDomContentsLoaded = () => {
   createjs.Ticker.on("tick", updateStage);
 
   const shape = new createjs.Shape();
-  shape.graphics
-    .beginFill("#F00")
-    .drawCircle(0, 0, 4)
-    .endFill();
+  shape.graphics.beginFill("#F00").drawCircle(0, 0, 4).endFill();
 
   const generator = new CanvasParticleGenerator(stage, wayPoint, shape);
   generator.play();
