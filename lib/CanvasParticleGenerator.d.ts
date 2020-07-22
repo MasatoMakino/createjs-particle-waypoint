@@ -1,7 +1,8 @@
 /// <reference types="easeljs" />
 import Container = createjs.Container;
 import DisplayObject = createjs.DisplayObject;
-import { ParticleGenerator, Particle, ParticleWay, ParticleGeneratorOption } from "particle-waypoint";
+import {Particle, ParticleGenerator, ParticleGeneratorOption, ParticleWay} from "particle-waypoint";
+
 export declare class CanvasParticleGenerator extends ParticleGenerator {
     protected parent: Container;
     protected map: DisplayObject[];
