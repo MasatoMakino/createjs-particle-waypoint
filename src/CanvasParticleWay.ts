@@ -33,17 +33,22 @@ export class CanvasParticleWay extends ParticleWay {
     this.drawPassage();
   }
 
+  protected onSetPoints() {
+    super.onSetPoints();
+    this.drawPassage();
+  }
+
   private drawPassage(): void {
     if (!this.passage) return;
-    if (!super.points) return;
-    if (super.points.length <= 1) return;
+    if (!this.points) return;
+    if (this.points.length <= 1) return;
 
-    const isBezier = super.points[1].length === 6;
+    const isBezier = this.points[1].length === 6;
 
     const g = this.passage.graphics;
     g.clear();
     g.ss(1).beginStroke(this.passageColor);
-    super.points.forEach((p, index) => {
+    this.points.forEach((p, index) => {
       if (index === 0) {
         g.mt(p[0], p[1]);
         return;
@@ -56,11 +61,6 @@ export class CanvasParticleWay extends ParticleWay {
       g.bezierCurveTo(p[0], p[1], p[2], p[3], p[4], p[5]);
     });
     g.ef();
-  }
-
-  set points(points: number[][]) {
-    super.points = points;
-    this.drawPassage();
   }
 
   public showPassage(): void {
