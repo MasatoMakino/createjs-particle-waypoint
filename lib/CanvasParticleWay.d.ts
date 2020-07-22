@@ -10,8 +10,8 @@ export declare class CanvasParticleWay extends ParticleWay {
         passageColor?: string;
     });
     private initPassage;
+    protected onSetPoints(): void;
     private drawPassage;
-    set points(points: number[][]);
     showPassage(): void;
     hidePassage(): void;
 }
