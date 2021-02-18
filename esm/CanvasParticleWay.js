@@ -1,5 +1,4 @@
-import {ParticleWay} from "particle-waypoint";
-
+import { ParticleWay } from "particle-waypoint";
 var Shape = createjs.Shape;
 export class CanvasParticleWay extends ParticleWay {
     constructor(points, option) {

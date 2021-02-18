@@ -1,5 +1,4 @@
-import {Particle} from "particle-waypoint";
-
+import { Particle } from "particle-waypoint";
 export class CanvasParticle extends Particle {
     constructor() {
         super(...arguments);

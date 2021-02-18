@@ -1,6 +1,5 @@
-import {CanvasParticle} from "./CanvasParticle";
-import {ParticleGenerator} from "particle-waypoint";
-
+import { CanvasParticle } from "./CanvasParticle";
+import { ParticleGenerator } from "particle-waypoint";
 export class CanvasParticleGenerator extends ParticleGenerator {
     constructor(parent, path, map, option) {
         super(path, option);
